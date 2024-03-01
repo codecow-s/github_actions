@@ -5,7 +5,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: mylinux
+    runs-on: tencentLinux
     steps:
       - name: checkout
         uses: actions/checkout@v2
