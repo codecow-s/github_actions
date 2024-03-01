@@ -15,6 +15,7 @@ jobs:
       - name: docker version
         run: |
           docker --version
+          docker images
 
       - name: run container and ignore the output whysf
         run: docker run -d --name myntex -p 8080:8080 myntex
