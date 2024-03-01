@@ -1,0 +1,20 @@
+name: this is myfirst tencent linux task
+
+# controls when the action will run. Triggers the workflow on push or pull request
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: mylinux
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: genernate image
+        run: docker build -t myntex .
+      - name: docker version
+        run: |
+          docker --version
+
+      - name: run container and ignore the output whysf
+        run: docker run -d --name myntex -p 8080:8080 myntex
